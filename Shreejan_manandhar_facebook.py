@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 root = Tk()
 root.title("Facebook")
-root.iconbitmap("logo.ico")
+
 
 
 conn = sqlite3.connect('facebook.db')
@@ -64,7 +64,7 @@ def delete():
 
     print_record = ''
     for record in records:
-        print_record += str(record[0]) + ' ' + str(record[1]) + ' ' + '\t' + str(record[6]) + "\n"
+        print_record += str(record[0]) + '  ' + str(record[1]) + '   ' + '\t' + str(record[6]) + "\n"
     query_label = Label(root, text=print_record)
     query_label.grid(row=10, column=0, columnspan=2)
 
@@ -186,70 +186,70 @@ def edit():
     edit_btn = Button(editor, text="Save", command=update)
     edit_btn.grid(row=8, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
 
-f_name = Entry(root, width=30)
+f_name = Entry(root, width=30,bg="lightgreen")
 f_name.grid(row=0, column=1 ,padx=20)
 
-l_name = Entry(root, width=30)
+l_name = Entry(root, width=30,bg="lightgreen")
 l_name.grid(row=1, column=1)
 
-address = Entry(root, width=30)
+address = Entry(root, width=30,bg="lightgreen")
 address.grid(row=2, column=1)
 
-age = Entry(root, width=30)
+age = Entry(root, width=30,bg="lightgreen")
 age.grid(row=3, column=1)
 
-password = Entry(root,show="*", width=30)
+password = Entry(root,show="*", width=30,bg="lightgreen")
 password.grid(row=4, column=1)
 
-father_name = Entry(root, width=30)
+father_name = Entry(root, width=30,bg="lightgreen")
 father_name.grid(row=5, column=1)
 
-city = Entry(root, width=30)
+city = Entry(root, width=30,bg="lightgreen")
 city.grid(row=6, column=1)
 
-zip_code = Entry(root, width=30)
+zip_code = Entry(root, width=30,bg="lightgreen")
 zip_code.grid(row=7, column=1)
 
-delete_box = Entry(root, width=30)
+delete_box = Entry(root, width=30,bg="lightgreen")
 delete_box.grid(row=11, column=1, pady=5)
 
-f_name_label = Label(root, text="First Name")
+f_name_label = Label(root, text="First Name",font=5)
 f_name_label.grid(row=0, column=0)
 
-l_name_label = Label(root, text="Last Name")
+l_name_label = Label(root, text="Last Name",font=5)
 l_name_label.grid(row=1, column=0)
 
-address_label = Label(root, text="Address")
+address_label = Label(root, text="Address",font=5)
 address_label.grid(row=2, column=0)
 
-age_label = Label(root, text="Age")
+age_label = Label(root, text="Age",font=5)
 age_label.grid(row=3, column=0)
 
-password_label = Label(root, text="Password")
+password_label = Label(root, text="Password",font=5)
 password_label.grid(row=4, column=0)
 
-father_name_label = Label(root, text="Father Name")
+father_name_label = Label(root, text="Father Name",font=5)
 father_name_label.grid(row=5, column=0)
 
-city_label = Label(root, text="City")
+city_label = Label(root, text="City",font=5)
 city_label.grid(row=6, column=0)
 
-zip_code_label = Label(root, text="Zip Code")
+zip_code_label = Label(root, text="Zip Code",font=5)
 zip_code_label.grid(row=7, column=0)
 
-delete_box_label = Label(root, text="Delete ID")
+delete_box_label = Label(root, text="Edit ID",font=5)
 delete_box_label.grid(row=11, column=0, pady=5)
 
-submit_btn = Button(root, text="Add Records", command=submit)
+submit_btn = Button(root, text="Add Records", command=submit,font=5,bg='light blue',fg='black')
 submit_btn.grid(row=8, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
 
-query_btn = Button(root, text="Show Records", command=query)
+query_btn = Button(root, text="Show Records", command=query,font=5,bg='light blue',fg='black')
 query_btn.grid(row=9, column=0, columnspan=2, pady=10, padx=10, ipadx=100)
 
-delete_btn = Button(root, text="Delete", command=delete)
+delete_btn = Button(root, text="Delete", command=delete,font=5,bg='light blue',fg='black')
 delete_btn.grid(row=12, column=0, columnspan=2, pady=10, padx=10, ipadx=120)
 
-edit_btn = Button(root, text="Update", command=edit)
+edit_btn = Button(root, text="Update", command=edit,font=5,bg='light blue',fg='black')
 edit_btn.grid(row=13, column=0, columnspan=2, pady=10, padx=10, ipadx=120)
 
 conn.commit()
